@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    minitest (4.3.2)
+    vcr (2.8.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  minitest
+  vcr
