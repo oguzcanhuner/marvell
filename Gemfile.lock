@@ -1,7 +1,10 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.3.5)
     coderay (1.0.8)
+    crack (0.4.2)
+      safe_yaml (~> 1.0.0)
     httparty (0.12.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -13,8 +16,12 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.8)
       slop (~> 3.3.1)
+    safe_yaml (1.0.1)
     slop (3.3.3)
     vcr (2.8.0)
+    webmock (1.17.2)
+      addressable (>= 2.2.7)
+      crack (>= 0.3.2)
 
 PLATFORMS
   ruby
@@ -24,3 +31,4 @@ DEPENDENCIES
   minitest
   pry
   vcr
+  webmock

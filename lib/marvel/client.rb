@@ -14,8 +14,7 @@ module Marvel
     attr_reader :public_key, :private_key
 
     def character(params)
-      id = params[:id]
-      result = self.class.get("/v1/public/characters/#{id}", query: auth_params)
+      result = self.class.get("/v1/public/characters/#{params[:id]}", query: auth_params)
       Marvel::Character.new(result)
     end
 
