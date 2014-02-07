@@ -25,6 +25,19 @@ describe Marvel::Client do
       Marvel::Client.stub :get, fixture('character') do
         character = client.character(id: 1009521)
         character.must_be_instance_of Marvel::Character
+        character.name.must_equal " Hank Pym"
+      end
+    end
+  end
+
+  describe "#characters" do
+    let(:client) { Marvel::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
+
+    it "returns an array of characters" do
+      Marvel::Client.stub :get, fixture('characters') do
+        characters = client.characters
+        characters.must_be_instance_of Array
+        characters.first.must_be_instance_of Marvel::Character
       end
     end
   end

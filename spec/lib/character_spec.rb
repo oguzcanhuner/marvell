@@ -2,7 +2,10 @@ require_relative "../spec_helper"
 
 describe Marvel::Character do
   describe "parsing the json argument" do
-    let(:character){ Marvel::Character.new(fixture('character'))}
+    let(:character){ 
+      character_data = Marvel::JsonParser.parse_result_set(fixture('character')).first
+      Marvel::Character.new(character_data)
+    }
 
     it "returns a hash result set" do
       character.result.must_be_instance_of Hash
@@ -38,6 +41,14 @@ describe Marvel::Character do
 
     it "returns a stories object" do
       character.stories.must_equal({"available"=>43, "collectionURI"=> "http://gateway.marvel.com/v4/public/characters/1009521/stories", "items"=> [{"resourceURI"=>"http://gateway.marvel.com/v1/public/stories/5621", "name"=>"1 of 6 - 6XLS", "type"=>"cover"}, {"resourceURI"=>"http://gateway.marvel.com/v1/public/stories/8682", "name"=>"3 of 6 - Ultron; THE INITIATIVE BANNER", "type"=>"interiorStory"}], "returned"=>2})
+    end
+
+    it "returns an events object" do
+      character.events.must_equal({"available"=>6, "collectionURI"=> "http://gateway.marvel.com/v1/public/characters/1009521/events", "items"=> [{"resourceURI"=>"http://gateway.marvel.com/v1/public/events/318", "name"=>"Dark Reign"}, {"resourceURI"=>"http://gateway.marvel.com/v1/public/events/302", "name"=>"Fear Itself"}], "returned"=>2})
+    end
+
+    it "returns a set of public urls for the resource" do
+      character.urls.must_equal([{"type"=>"detail", "url"=> "http://marvel.com/comics/characters/1009521/_hank_pym?utm_campaign=apiRef&utm_source=07e4dc912806b1c5d1e51687095bca09"}])
     end
   end
 end

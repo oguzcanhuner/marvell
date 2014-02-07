@@ -6,14 +6,8 @@ module Marvel
     attr_reader :result
 
     def method_missing(method_name, *arguments, &block)
-      result = character[method_name.to_s]
-      result ? result : super
-    end
-
-    private
-    def character
-      results = result.fetch("data").fetch("results")
-      results.first
+      attribute = result[method_name.to_s]
+      attribute ? attribute : super
     end
   end
 end

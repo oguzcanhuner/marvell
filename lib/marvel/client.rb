@@ -13,9 +13,19 @@ module Marvel
     end
     attr_reader :public_key, :private_key
 
+    # Takes a character ID
     def character(params)
       result = self.class.get("/v1/public/characters/#{params[:id]}", query: auth_params)
-      Marvel::Character.new(result)
+      character = Marvel::JsonParser.parse_result_set(result).first
+      Marvel::Character.new(character)
+    end
+
+    def characters(params: {})
+      result = self.class.get("/v1/public/characters?limit=1", query: auth_params)
+      characters = Marvel::JsonParser.parse_result_set(result)
+      characters.collect do |character|
+        Marvel::Character.new(character)
+      end
     end
 
     private

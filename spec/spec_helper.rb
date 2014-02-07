@@ -1,9 +1,9 @@
 require_relative "../lib/marvel"
 
 require 'minitest/autorun'
-require "webmock/minitest"
+#require "webmock/minitest"
 
-WebMock.disable_net_connect!
+#WebMock.disable_net_connect!
 
 def fixture(name)
   fixture = IO.read("spec/fixtures/#{name}.json")
