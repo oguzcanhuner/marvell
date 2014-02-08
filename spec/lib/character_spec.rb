@@ -1,10 +1,10 @@
 require_relative "../spec_helper"
 
-describe Marvel::Character do
+describe "a character entity" do
   describe "parsing the json argument" do
     let(:character){ 
       character_data = Marvel::JsonParser.parse_result_set(fixture('character')).first
-      Marvel::Character.new(character_data)
+      Marvel::Entity.new(character_data)
     }
 
     it "returns a hash result set" do

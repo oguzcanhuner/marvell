@@ -1,5 +1,5 @@
 module Marvel
-  class Character
+  class Entity
     def initialize(json_result)
       @result = json_result
     end
