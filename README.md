@@ -33,7 +33,7 @@ client.characters(name: "Spider-Man")
 client.characters(story_id: 5621)
 ```
 
-Check out developer.marvel.com/docs to see all the available endpoints.
+Check out http://developer.marvel.com/docs to see all the available endpoints.
 
 ## Copyright
 
