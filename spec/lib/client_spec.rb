@@ -15,59 +15,80 @@ describe Marvel::Client do
   end
 
   describe "#character" do
+    before { VCR.insert_cassette 'character', record: :new_episodes }
+    after { VCR.eject_cassette }
+
     it "given an id, returns a Marvel::Character object" do
-      Marvel::Client.stub :get, fixture('character') do
-        character = client.character(id: 1009521)
-        character.must_be_instance_of Marvel::Entity
-        character.name.must_equal " Hank Pym"
-      end
+      character = client.character(id: 1009521)
+      character.must_be_instance_of Marvel::Entity
+      character.name.must_equal " Hank Pym"
     end
   end
 
   describe "#characters" do
+    before { VCR.insert_cassette 'characters', record: :new_episodes }
+    after { VCR.eject_cassette }
+
     it "returns an array of characters" do
-      Marvel::Client.stub :get, fixture('characters') do
-        characters = client.characters
-        characters.must_be_instance_of Array
-        characters.first.must_be_instance_of Marvel::Entity
-      end
+      characters = client.characters
+      characters.must_be_instance_of Array
+      characters.first.must_be_instance_of Marvel::Entity
     end
 
     describe "filtering the resultset" do
+
       it "filters by limit" do
-        Marvel::Client.stub :get, fixture('characters') do
-          characters = client.characters(limit: 2)
-          characters.size.must_equal 2
-        end
+        VCR.insert_cassette 'characters_limited', record: :new_episodes
+        characters = client.characters(limit: 4)
+        characters.size.must_equal 4
+        VCR.eject_cassette
+      end
+
+      it "filters by name" do
+        VCR.insert_cassette 'characters_by_name', record: :new_episodes
+        characters = client.characters(name: 'Spider-Man')
+        characters.first.name.must_equal "Spider-Man"
+        VCR.eject_cassette
       end
     end
   end
 
   describe "#comic" do
+    before { VCR.insert_cassette 'comic', record: :new_episodes }
+    after { VCR.eject_cassette }
+
     it "given an id, returns a Marvel::Comic object" do
-      Marvel::Client.stub :get, fixture('comic') do
-        comic = client.comic(id: 41530)
-        comic.must_be_instance_of Marvel::Entity
-      end
+      comic = client.comic(id: 41530)
+      comic.must_be_instance_of Marvel::Entity
     end
   end
 
   describe "#comics" do
+    before { VCR.insert_cassette 'comics', record: :new_episodes }
+    after { VCR.eject_cassette }
+
     it "returns an array of comics" do
-      Marvel::Client.stub :get, fixture('comics') do
-        comics = client.comics
-        comics.must_be_instance_of Array
-        comics.first.must_be_instance_of Marvel::Entity
-      end
+      comics = client.comics
+      comics.must_be_instance_of Array
+      comics.first.must_be_instance_of Marvel::Entity
     end
 
     describe "filtering the resultset" do
+
       it "filters by limit" do
-        Marvel::Client.stub :get, fixture('comics') do
-          comics = client.comics(limit: 2)
-          comics.size.must_equal 2
-        end
+        VCR.insert_cassette 'comics_limited', record: :new_episodes
+        comics = client.comics(limit: 4)
+        comics.size.must_equal 4
+        VCR.eject_cassette
+      end
+
+      it "filters by format" do
+        VCR.insert_cassette 'comics_by_format', record: :new_episodes
+        comics = client.comics(format: 'digital comic')
+        comics.first.format.must_equal 'Digital Comic'
+        VCR.eject_cassette
       end
     end
   end
+
 end

@@ -1,10 +1,11 @@
 require_relative "../spec_helper"
 
-describe Marvel::Comic do
-  let(:comic){ 
-    comic_data = Marvel::JsonParser.parse_result_set(fixture('comic')).first
-    Marvel::Entity.new(comic_data)
-  }
+describe 'marvel comic entity' do
+  before { VCR.insert_cassette 'comic', record: :new_episodes }
+  after { VCR.eject_cassette }
+
+  let(:client) { Marvel::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
+  let(:comic){ client.comic(id: 41530) }
 
   it "returns a hash result set" do
     comic.result.must_be_instance_of Hash

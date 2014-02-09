@@ -1,11 +1,13 @@
 require_relative "../lib/marvel"
 
 require 'minitest/autorun'
-#require "webmock/minitest"
+require "webmock/minitest"
+require "vcr"
 
-#WebMock.disable_net_connect!
+#WebMock.allow_net_connect!
 
-def fixture(name)
-  fixture = IO.read("spec/fixtures/#{name}.json")
-  JSON.parse(fixture)
+#VCR config
+VCR.configure do |c|
+  c.cassette_library_dir = 'spec/fixtures/dish_cassettes'
+  c.hook_into :webmock
 end
