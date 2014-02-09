@@ -2,89 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://gateway.marvel.com/v1/public/characters/1009521?apikey=07e4dc912806b1c5d1e51687095bca09&hash=0db5e378a0838a56ec2e8fadcc495e9a&ts=1
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Etag:
-      - a441c2d4f28c6db25c9da4270cf84b4fa2f9180b
-      Content-Type:
-      - application/json
-      Content-Length:
-      - '7285'
-      Date:
-      - Sun, 09 Feb 2014 00:50:52 GMT
-      Connection:
-      - keep-alive
-    body:
-      encoding: UTF-8
-      string: '{"code":200,"status":"Ok","etag":"a441c2d4f28c6db25c9da4270cf84b4fa2f9180b","data":{"offset":0,"limit":20,"total":1,"count":1,"results":[{"id":1009521,"name":"
-        Hank Pym","description":"","modified":"1969-12-31T19:00:00-0500","thumbnail":{"path":"http://i.annihil.us/u/prod/marvel/i/mg/8/c0/4ce5a0e31f109","extension":"jpg"},"resourceURI":"http://gateway.marvel.com/v1/public/characters/1009521","comics":{"available":44,"collectionURI":"http://gateway.marvel.com/v1/public/characters/1009521/comics","items":[{"resourceURI":"http://gateway.marvel.com/v1/public/comics/35533","name":"Amazing
-        Spider-Man (1999) #661"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/39041","name":"Amazing
-        Spider-Man (1999) #661 (X-Men Art Variant)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/35534","name":"Amazing
-        Spider-Man (1999) #662"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/7336","name":"Avengers
-        (1963) #83"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/7353","name":"Avengers
-        (1963) #99"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/6995","name":"Avengers
-        (1963) #138"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/7004","name":"Avengers
-        (1963) #146"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/7015","name":"Avengers
-        (1963) #156"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/29213","name":"Avengers
-        Academy (2010) #1"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/36770","name":"Avengers
-        Academy (2010) #1 (2ND PRINTING VARIANT)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/34490","name":"Avengers
-        Academy (2010) #1 (DJURDJEVIC VARIANT)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/29217","name":"Avengers
-        Academy (2010) #2"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/36482","name":"Avengers
-        Academy (2010) #15"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/36479","name":"Avengers
-        Academy (2010) #18"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/36489","name":"Avengers
-        Academy (2010) #21"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/29324","name":"Avengers
-        Academy Vol 1 : Permanent Record TPB (Trade Paperback)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/6040","name":"Beyond!
-        (Hardcover)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/4447","name":"Beyond!
-        (2006) #1"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/30015","name":"Incredible
-        Hulks (2009) #607 (MCGUINNESS VARIANT)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/13477","name":"Mighty
-        Avengers (2007) #3"}],"returned":20},"series":{"available":11,"collectionURI":"http://gateway.marvel.com/v1/public/characters/1009521/series","items":[{"resourceURI":"http://gateway.marvel.com/v1/public/series/454","name":"Amazing
-        Spider-Man (1999 - 2013)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1991","name":"Avengers
-        (1963 - 1996)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/9086","name":"Avengers
-        Academy (2010 - 2012)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/10037","name":"Avengers
-        Academy Vol 1 : Permanent Record TPB (2011)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1928","name":"Beyond!
-        (2007)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/997","name":"Beyond!
-        (2006)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/8842","name":"Incredible
-        Hulks (2009 - 2011)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1866","name":"Mighty
-        Avengers (2007 - 2010)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/5381","name":"Mighty
-        Avengers Vol. 1: The Ultron Initiative (2008)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/12877","name":"The
-        Iron Age (2010 - 2011)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/2715","name":"Women
-        of Marvel Vol. 2 (2007)"}],"returned":11},"stories":{"available":43,"collectionURI":"http://gateway.marvel.com/v1/public/characters/1009521/stories","items":[{"resourceURI":"http://gateway.marvel.com/v1/public/stories/5621","name":"1
-        of 6 - 6XLS","type":"cover"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/8682","name":"3
-        of 6 - Ultron; THE INITIATIVE BANNER","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/14528","name":"Stranger
-        in a Strange Man!","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/14546","name":"The
-        Assassin Never Fails!","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/14568","name":"The
-        Private War of Doctor Doom!","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/15235","name":"Come
-        On In, The Revolution''s Fine","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/15269","name":"They
-        First Make Mad","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/32378","name":"4
-        of 6 - Ultron; THE INITIATIVE BANNER","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/36886","name":"Venom
-        Bomb 2 of 5","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/44681","name":"Venom
-        Bomb 5 of 5","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/47781","name":"Secret
-        Invasion 6 of 8","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/52267","name":"2
-        of 6","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/52726","name":"3
-        of 6","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/53148","name":"1
-        of 1","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/53543","name":"1
-        of 2","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/57228","name":"Interior
-        #57228","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/57230","name":"Interior
-        #57230","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/57232","name":"Interior
-        #57232","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/57234","name":"Interior
-        #57234","type":"interiorStory"},{"resourceURI":"http://gateway.marvel.com/v1/public/stories/57236","name":"Interior
-        #57236","type":"interiorStory"}],"returned":20},"events":{"available":6,"collectionURI":"http://gateway.marvel.com/v1/public/characters/1009521/events","items":[{"resourceURI":"http://gateway.marvel.com/v1/public/events/318","name":"Dark
-        Reign"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/302","name":"Fear
-        Itself"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/255","name":"Initiative"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/269","name":"Secret
-        Invasion"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/309","name":"Shattered
-        Heroes"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/273","name":"Siege"}],"returned":6},"urls":[{"type":"detail","url":"http://marvel.com/comics/characters/1009521/_hank_pym?utm_campaign=apiRef&utm_source=07e4dc912806b1c5d1e51687095bca09"}]}]}}'
-    http_version: 
-  recorded_at: Sun, 09 Feb 2014 00:50:31 GMT
-- request:
-    method: get
     uri: http://gateway.marvel.com/v1/public//characters/1009521?apikey=07e4dc912806b1c5d1e51687095bca09&hash=0db5e378a0838a56ec2e8fadcc495e9a&ts=1
     body:
       encoding: US-ASCII
@@ -96,18 +13,18 @@ http_interactions:
       message: OK
     headers:
       Etag:
-      - a441c2d4f28c6db25c9da4270cf84b4fa2f9180b
+      - 9a3c31018e37345cce34998b3e7e932665ead9c1
       Content-Type:
       - application/json
       Content-Length:
       - '7285'
       Date:
-      - Sun, 09 Feb 2014 05:27:08 GMT
+      - Sun, 09 Feb 2014 05:45:46 GMT
       Connection:
       - keep-alive
     body:
       encoding: UTF-8
-      string: '{"code":200,"status":"Ok","etag":"a441c2d4f28c6db25c9da4270cf84b4fa2f9180b","data":{"offset":0,"limit":20,"total":1,"count":1,"results":[{"id":1009521,"name":"
+      string: '{"code":200,"status":"Ok","etag":"9a3c31018e37345cce34998b3e7e932665ead9c1","data":{"offset":0,"limit":20,"total":1,"count":1,"results":[{"id":1009521,"name":"
         Hank Pym","description":"","modified":"1969-12-31T19:00:00-0500","thumbnail":{"path":"http://i.annihil.us/u/prod/marvel/i/mg/8/c0/4ce5a0e31f109","extension":"jpg"},"resourceURI":"http://gateway.marvel.com/v1/public/characters/1009521","comics":{"available":44,"collectionURI":"http://gateway.marvel.com/v1/public/characters/1009521/comics","items":[{"resourceURI":"http://gateway.marvel.com/v1/public/comics/35533","name":"Amazing
         Spider-Man (1999) #661"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/39041","name":"Amazing
         Spider-Man (1999) #661 (X-Men Art Variant)"},{"resourceURI":"http://gateway.marvel.com/v1/public/comics/35534","name":"Amazing
@@ -132,9 +49,9 @@ http_interactions:
         Spider-Man (1999 - 2013)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1991","name":"Avengers
         (1963 - 1996)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/9086","name":"Avengers
         Academy (2010 - 2012)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/10037","name":"Avengers
-        Academy Vol 1 : Permanent Record TPB (2011)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1928","name":"Beyond!
-        (2007)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/997","name":"Beyond!
-        (2006)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/8842","name":"Incredible
+        Academy Vol 1 : Permanent Record TPB (2011)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/997","name":"Beyond!
+        (2006)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1928","name":"Beyond!
+        (2007)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/8842","name":"Incredible
         Hulks (2009 - 2011)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/1866","name":"Mighty
         Avengers (2007 - 2010)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/5381","name":"Mighty
         Avengers Vol. 1: The Ultron Initiative (2008)"},{"resourceURI":"http://gateway.marvel.com/v1/public/series/12877","name":"The
@@ -165,5 +82,5 @@ http_interactions:
         Invasion"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/309","name":"Shattered
         Heroes"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/273","name":"Siege"}],"returned":6},"urls":[{"type":"detail","url":"http://marvel.com/comics/characters/1009521/_hank_pym?utm_campaign=apiRef&utm_source=07e4dc912806b1c5d1e51687095bca09"}]}]}}'
     http_version: 
-  recorded_at: Sun, 09 Feb 2014 05:26:44 GMT
+  recorded_at: Sun, 09 Feb 2014 05:45:28 GMT
 recorded_with: VCR 2.8.0
