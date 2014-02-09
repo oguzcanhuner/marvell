@@ -1,6 +1,5 @@
 require "httparty"
 require "digest/md5"
-require 'pry'
 
 module Marvel
   class Client
