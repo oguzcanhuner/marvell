@@ -18,11 +18,7 @@ module Marvel
     end
 
     def characters(params = {})
-      url = "/v1/public/characters"
-      url += "/#{params.delete(:id)}" if params[:id]
-
-      result = self.class.get(url, query: auth_params.merge(params))
-      parse_collection(result)
+      get_and_parse_collection "characters", params
     end
 
     def comic(params)
@@ -30,14 +26,26 @@ module Marvel
     end
 
     def comics(params = {})
-      url = "/v1/public/comics"
+      get_and_parse_collection "comics", params
+    end
+
+    def creator(params)
+      creators(id: params[:id]).first
+    end
+
+    def creators(params = {})
+      get_and_parse_collection "creators", params
+    end
+
+    private
+
+    def get_and_parse_collection(name, params)
+      url = "/v1/public/#{name}"
       url += "/#{params.delete(:id)}" if params[:id]
 
       result = self.class.get(url, query: auth_params.merge(params))
       parse_collection(result)
     end
-
-    private
 
     def parse_collection(result)
       entities = Marvel::JsonParser.parse_result_set(result)

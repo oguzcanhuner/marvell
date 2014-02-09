@@ -83,4 +83,3 @@ http_interactions:
         Heroes"},{"resourceURI":"http://gateway.marvel.com/v1/public/events/273","name":"Siege"}],"returned":6},"urls":[{"type":"detail","url":"http://marvel.com/comics/characters/1009521/_hank_pym?utm_campaign=apiRef&utm_source=07e4dc912806b1c5d1e51687095bca09"}]}]}}'
     http_version: 
   recorded_at: Sun, 09 Feb 2014 00:50:31 GMT
-recorded_with: VCR 2.8.0

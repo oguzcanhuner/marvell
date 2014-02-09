@@ -109,4 +109,3 @@ http_interactions:
         Invasion"}],"returned":20},"urls":[{"type":"detail","url":"http://marvel.com/comics/characters/1009610/spider-man?utm_campaign=apiRef&utm_source=07e4dc912806b1c5d1e51687095bca09"},{"type":"wiki","url":"http://marvel.com/universe/Spider-Man_(Peter_Parker)?utm_campaign=apiRef&utm_source=07e4dc912806b1c5d1e51687095bca09"}]}]}}'
     http_version: 
   recorded_at: Sun, 09 Feb 2014 01:10:13 GMT
-recorded_with: VCR 2.8.0
