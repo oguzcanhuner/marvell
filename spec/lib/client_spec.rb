@@ -1,18 +1,18 @@
 require_relative "../spec_helper"
 
-describe Marvel::Client do
-  let(:client) { Marvel::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
+describe Marvell::Client do
+  let(:client) { Marvell::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
 
   before { VCR.insert_cassette 'requests', record: :new_episodes }
   after { VCR.eject_cassette }
 
   describe "api functionality" do
     it "uses the HTTParty library" do
-      Marvel::Client.must_include HTTParty
+      Marvell::Client.must_include HTTParty
     end
 
     it "uses the correct base uri" do
-      Marvel::Client.base_uri.must_equal "http://gateway.marvel.com"
+      Marvell::Client.base_uri.must_equal "http://gateway.marvel.com"
     end
   end
 
@@ -20,7 +20,7 @@ describe Marvel::Client do
 
     it "given an id, returns a Marvel::Character object" do
       character = client.character(id: 1009521)
-      character.must_be_instance_of Marvel::Entity
+      character.must_be_instance_of Marvell::Entity
       character.name.must_equal " Hank Pym"
     end
   end
@@ -30,7 +30,7 @@ describe Marvel::Client do
     it "returns an array of characters" do
       characters = client.characters
       characters.must_be_instance_of Array
-      characters.first.must_be_instance_of Marvel::Entity
+      characters.first.must_be_instance_of Marvell::Entity
     end
 
     describe "filtering the resultset" do
@@ -72,7 +72,7 @@ describe Marvel::Client do
   describe "#comic" do
     it "given an id, returns a Marvel::Entity object" do
       comic = client.comic(id: 41530)
-      comic.must_be_instance_of Marvel::Entity
+      comic.must_be_instance_of Marvell::Entity
     end
   end
 
@@ -80,7 +80,7 @@ describe Marvel::Client do
     it "returns an array of comics" do
       comics = client.comics
       comics.must_be_instance_of Array
-      comics.first.must_be_instance_of Marvel::Entity
+      comics.first.must_be_instance_of Marvell::Entity
     end
 
     describe "filtering the resultset" do
@@ -100,7 +100,7 @@ describe Marvel::Client do
   describe '#creator' do
     it "given an id, returns a Marvel::Entity object" do
       creator = client.creator(id: 546)
-      creator.must_be_instance_of Marvel::Entity
+      creator.must_be_instance_of Marvell::Entity
     end
   end
 
@@ -108,7 +108,7 @@ describe Marvel::Client do
     it 'returns an array of creators' do
       creators = client.creators
       creators.must_be_instance_of Array
-      creators.first.must_be_instance_of Marvel::Entity
+      creators.first.must_be_instance_of Marvell::Entity
     end
 
     describe "filtering the resultset" do
@@ -129,7 +129,7 @@ describe Marvel::Client do
 
     it "given an id, returns a Marvel::Entity object" do
       story = client.story(id: 3)
-      story.must_be_instance_of Marvel::Entity
+      story.must_be_instance_of Marvell::Entity
     end
   end
 
@@ -138,7 +138,7 @@ describe Marvel::Client do
     it "returns an array of stories" do
       stories = client.stories
       stories.must_be_instance_of Array
-      stories.first.must_be_instance_of Marvel::Entity
+      stories.first.must_be_instance_of Marvell::Entity
     end
 
     describe "filtering the resultset" do
@@ -154,7 +154,7 @@ describe Marvel::Client do
 
     it "given an id, returns a Marvel::Entity object" do
       serie = client.serie(id: 3)
-      serie.must_be_instance_of Marvel::Entity
+      serie.must_be_instance_of Marvell::Entity
     end
   end
 
@@ -163,7 +163,7 @@ describe Marvel::Client do
     it "returns an array of series" do
       series = client.series
       series.must_be_instance_of Array
-      series.first.must_be_instance_of Marvel::Entity
+      series.first.must_be_instance_of Marvell::Entity
     end
 
     describe "filtering the resultset" do

@@ -1,4 +1,4 @@
-require_relative "../lib/marvel"
+require_relative "../lib/marvell"
 
 require 'minitest/autorun'
 require "webmock/minitest"

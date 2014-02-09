@@ -1,4 +1,4 @@
-module Marvel
+module Marvell
   class Entity
     def initialize(json_result)
       @result = json_result

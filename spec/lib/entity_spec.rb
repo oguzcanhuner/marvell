@@ -1,7 +1,7 @@
 require_relative "../spec_helper"
 
-describe Marvel::Entity do
-  let(:client) { Marvel::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
+describe Marvell::Entity do
+  let(:client) { Marvell::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
 
   before { VCR.insert_cassette 'character', record: :new_episodes }
   after { VCR.eject_cassette }

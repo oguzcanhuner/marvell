@@ -1,7 +1,7 @@
 require "httparty"
 require "digest/md5"
 
-module Marvel
+module Marvell
   class Client
     include HTTParty
     base_uri "gateway.marvel.com"
@@ -94,9 +94,9 @@ module Marvel
     end
 
     def parse_collection(result)
-      entities = Marvel::JsonParser.parse_result_set(result)
+      entities = Marvell::JsonParser.parse_result_set(result)
       entities.collect do |entity|
-        Marvel::Entity.new(entity)
+        Marvell::Entity.new(entity)
       end
     end
 
