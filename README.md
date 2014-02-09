@@ -3,6 +3,12 @@ marvell
 
 A ruby wrapper for the Marvel Developer API
 
+## Download
+
+```
+gem install marvell
+```
+
 ## Usage
 
 ```ruby
