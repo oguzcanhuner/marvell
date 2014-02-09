@@ -1,6 +1,5 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'marvelite/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "marvell"
@@ -9,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["oguzcanhuner@gmail.com"]
   spec.description   = %q{Ruby Marvel Comics API Wrapper}
   spec.summary       = %q{Ruby Marvel Comics API Wrapper}
-  spec.homepage      = ""
+  spec.homepage      = "http://www.github.com/oguzcanhuner/marvell"
   spec.license       = "MIT"
 
   spec.files = Dir["{lib,spec}/**/*", "[A-Z]*"] - ["Gemfile.lock"]
