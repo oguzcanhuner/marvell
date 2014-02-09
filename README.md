@@ -5,7 +5,7 @@ A ruby wrapper for the Marvel Developer API
 
 ## Usage
 
-```
+```ruby
 client = Marvell::Client.new(public_key: '123456', private_key: "abcdef")
 
 #fetch a single character
