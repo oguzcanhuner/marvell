@@ -1,7 +1,11 @@
 source 'https://rubygems.org'
 
-gem "minitest"
-gem "vcr"
-gem "webmock"
-gem "httparty"
-gem "pry"
+group :test do
+  gem "minitest"
+  gem "vcr"
+  gem "webmock"
+end
+
+group :production do
+  gem "httparty"
+end
