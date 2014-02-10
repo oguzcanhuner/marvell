@@ -4,7 +4,7 @@ describe 'marvel comic entity' do
   before { VCR.insert_cassette 'requests', record: :new_episodes }
   after { VCR.eject_cassette }
 
-  let(:client) { Marvell::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
+  let(:client) { Marvell::Client.new(public_key: ENV["PUBLIC_KEY"], private_key: ENV["PRIVATE_KEY"])}
   let(:comic){ client.comic(id: 41530) }
 
   it "returns a hash result set" do

@@ -5,7 +5,7 @@ describe "a character entity" do
   after { VCR.eject_cassette }
 
   describe "parsing the json argument" do
-    let(:client) { Marvell::Client.new(public_key: "07e4dc912806b1c5d1e51687095bca09", private_key: 'a97d276fe66678f07ec9150e3012d41160937b85')}
+    let(:client) { Marvell::Client.new(public_key: ENV["PUBLIC_KEY"], private_key: ENV["PRIVATE_KEY"])}
     let(:character){ client.character(id: 1009521) }
 
     it "returns a hash result set" do
