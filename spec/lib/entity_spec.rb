@@ -3,7 +3,7 @@ require_relative "../spec_helper"
 describe Marvell::Entity do
   let(:client) { Marvell::Client.new(public_key: ENV["PUBLIC_KEY"], private_key: ENV["PRIVATE_KEY"])}
 
-  before { VCR.insert_cassette 'character', record: :new_episodes }
+  before { VCR.insert_cassette 'requests', record: :new_episodes }
   after { VCR.eject_cassette }
   
   it "finds an entity attribute if one exists" do

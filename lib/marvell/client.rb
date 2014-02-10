@@ -101,7 +101,7 @@ module Marvell
     end
 
     def auth_params
-      timestamp = 1
+      timestamp = Time.now.to_i
       hash = auth_hash(ts: timestamp)
       return {ts: timestamp, apikey: public_key, hash: hash}
     end

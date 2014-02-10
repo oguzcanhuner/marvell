@@ -1,7 +1,7 @@
 require_relative "../spec_helper"
 
 describe "a character entity" do
-  before { VCR.insert_cassette 'character', record: :new_episodes }
+  before { VCR.insert_cassette 'requests', record: :new_episodes }
   after { VCR.eject_cassette }
 
   describe "parsing the json argument" do
