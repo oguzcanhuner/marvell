@@ -71,6 +71,13 @@ describe Marvell::Client do
         comics = client.comics(creator_id: 4781)
         comics.first.title.must_equal "Silver Surfer (1987) #139"
       end
+
+      it "returns 5 comics written by stan lee" do
+        creator = client.creators(first_name: "stan", last_name: "lee").first
+        comics = client.comics(creator_id: creator.id, limit: 5)
+        comics.size.must_equal 5
+        comics.first.title.must_equal "Fantastic Four Epic Collection: All in the Family (Trade Paperback)"
+      end
     end
   end
 

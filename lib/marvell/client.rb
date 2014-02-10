@@ -69,7 +69,9 @@ module Marvell
       url += "/#{name}"
       url += "/#{params.delete(:id)}" if params[:id]
 
-      result = self.class.get(url, query: auth_params.merge(params))
+      parsed_params = {}
+      params.each{ |key, value| parsed_params[key.to_s.camel_case] = value }
+      result = self.class.get(url, query: auth_params.merge(parsed_params))
       if result['code'] == 200
         parse_collection(result)
       else

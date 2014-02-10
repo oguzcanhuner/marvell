@@ -17,7 +17,10 @@ Get your keys by signing up as a developer on [the Marvel Developer website](htt
 client = Marvell::Client.new(public_key: '123456', private_key: "abcdef")
 
 #fetch a single character
-client.character(1009521)
+client.character(id: 1009521)
+
+#fetch a single comic
+client.comic(id: 36489)
 
 #fetch a collection of characters
 client.characters
@@ -28,9 +31,13 @@ client.characters(limit: 4)
 #fetch a character by name
 client.characters(name: "Spider-Man")
 
-
 #fetch a collection of characters through another resource
 client.characters(story_id: 5621)
+
+#fetch 5 comics written by stan lee
+creator = client.creators(first_name: "stan", last_name: "lee").first
+client.comics(creator_id: creator.id, limit: 5)
+
 ```
 
 Check out http://developer.marvel.com/docs to see all the available endpoints.
