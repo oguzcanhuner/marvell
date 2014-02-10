@@ -66,6 +66,11 @@ describe Marvell::Client do
         characters = client.characters(event_id: 318)
         characters.first.name.must_equal " Hank Pym"
       end
+
+      it "returns a set of comics which belong to a creator" do
+        comics = client.comics(creator_id: 4781)
+        comics.first.title.must_equal "Silver Surfer (1987) #139"
+      end
     end
   end
 

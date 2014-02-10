@@ -87,7 +87,7 @@ module Marvell
       elsif params[:comic_id]
         "comics/#{params.delete(:comic_id)}"
       elsif params[:creator_id]
-        "events/#{params.delete(:creator_id)}"
+        "creators/#{params.delete(:creator_id)}"
       else
         ""
       end
